@@ -1,0 +1,7 @@
+g++
+make
+proj-bin
+proj-data
+libproj-dev
+geos
+libgeos-dev
