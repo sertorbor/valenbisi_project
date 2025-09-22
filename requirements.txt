@@ -1,9 +1,13 @@
+# Core
 streamlit==1.38.0
 pandas==2.2.3
 requests==2.32.3
-folium
+
+# Mapping
+folium==0.18.3
 streamlit-folium==0.20.0
+
+# Geocoding & distance calculations
 geopy==2.4.1
 opencage==2.5.0
 pyproj==3.6.1
-
