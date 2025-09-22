@@ -1,7 +1,3 @@
-g++
-make
-proj-bin
-proj-data
-libproj-dev
-geos
+# Geospatial libraries
 libgeos-dev
+libproj-dev
