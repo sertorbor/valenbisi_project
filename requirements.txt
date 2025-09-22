@@ -11,3 +11,6 @@ streamlit-folium==0.20.0
 geopy==2.4.1
 opencage==2.5.0
 pyproj==3.6.1
+
+# Optional: for better handling of geospatial operations
+shapely==2.2.1
