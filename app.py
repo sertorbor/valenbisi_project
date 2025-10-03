@@ -21,10 +21,11 @@ Esta app te ayuda a planificar una ruta combinada:
 OPENCAGE_KEY = "dc45bcf2743f475e93dce4021b6a3982"
 geocoder = OpenCageGeocode(OPENCAGE_KEY)
 
-# CARGA CENTROS CULTURALES
+# CARGA CENTROS CULTURALES DESDE API
 @st.cache_data
-def load_centros(filepath):
-    df = pd.read_csv(filepath)
+def load_centros():
+    url = "https://mapas.valencia.es/lanzadera/opendata/Infociudad_CentrosCulturales/CSV"
+    df = pd.read_csv(url, sep=";")
     df.columns = df.columns.str.strip()
     df = df.dropna(subset=['x', 'y'])
     import pyproj
@@ -94,7 +95,7 @@ def find_station_near(coord, estaciones, min_unidades=1, tipo="origen"):
     return estaciones_filtradas.loc[estaciones_filtradas['distancia'].idxmin()]
 
 # CARGA DE DATOS
-centros = load_centros("v_infociudad.csv")
+centros = load_centros()
 estaciones = get_valenbisi_data()
 
 # PARÁMETROS DE BÚSQUEDA
